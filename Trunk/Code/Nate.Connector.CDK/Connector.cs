@@ -144,7 +144,7 @@ namespace CDK
                 }
                 catch (Exception exception)
                 {
-                    unhandledExecptionHandler(methodInfo.GetCurrentMethodName(), exception);
+                    //unhandledExecptionHandler(methodInfo.GetCurrentMethodName(), exception);
                 }
             }
         }
@@ -211,14 +211,6 @@ namespace CDK
 
                     switch (action)
                     {
-                        //case ConnectorService.SupportedActions.Create:
-                            //return service.Create(input.Input[0]);
-                        //case CleverbridgeService.SupportedActions.Execute:
-                        //    return service.Execute(input.Input[0]);
-                        //case CleverbridgeService.SupportedActions.Remove:
-                        //    return service.Remove(input.Input[0],
-                        //        ExpressionParser.GetMatchCriteria(input.LookupCondition[0]));
-                        //case CleverbridgeService.SupportedActions.UpdateWith:
                         case ConnectorService.SupportedActions.Update:
                             return service.Update(input.Input[0],
                                 ExpressionParser.GetMatchCriteria(input.LookupCondition[0]));

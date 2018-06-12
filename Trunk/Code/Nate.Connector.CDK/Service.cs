@@ -24,11 +24,8 @@ namespace CDK
     {
         #region Instaniation
         public RestClient client = new RestClient();
-        //private RESTClient restClient;
         private Reflector reflector;
         private ConnectionHelper.ConnectionProperties properties;
-
-        //public CookieContainer cookieJar;
         public bool IsConnected { get; set; }
         public Guid ConnectorTypeId { get; }
         private DateTime? LastConnected { get; set; }
@@ -65,7 +62,7 @@ namespace CDK
 
                     var result = client.MakeRequest("");
 
-                    // if no exception, connect was successful
+                    //if no exception, connect was successful
                     LastConnected = DateTime.UtcNow;
                     IsConnected = true;
                     reflector = new Reflector(Assembly.GetExecutingAssembly());
@@ -87,23 +84,23 @@ namespace CDK
 
         public void Disconnect()
         {
-            try
-            {
-                var url = "https://dm04.fpx.com/rs/19/cpq/logout";
-                client.EndPoint = url;
-                client.Method = HttpVerb.POST;
-                client.ContentType = "application/json";
-                client.Accept = "application/json";
-                client.PostData = "";
-                var result = client.MakeRequest("");
-                LastConnected = null;
-                IsConnected = false;
-            }
-            catch (RESTRequestException ex)
-            {
-                IsConnected = false;
-                Logger.Write(Logger.Severity.Info, "Failed to Disconnect", ex.Message);
-            }
+            //try
+            //{
+            //    var url = "https://dm04.fpx.com/rs/19/cpq/logout";
+            //    client.EndPoint = url;
+            //    client.Method = HttpVerb.POST;
+            //    client.ContentType = "application/json";
+            //    client.Accept = "application/json";
+            //    client.PostData = "";
+            //    var result = client.MakeRequest("");
+            //    LastConnected = null;
+            //    IsConnected = false;
+            //}
+            //catch (RESTRequestException ex)
+            //{
+            //    IsConnected = false;
+            //    Logger.Write(Logger.Severity.Info, "Failed to Disconnect", ex.Message);
+            //}
             IsConnected = false;
         }
 
