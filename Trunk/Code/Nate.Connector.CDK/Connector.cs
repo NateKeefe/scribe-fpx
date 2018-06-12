@@ -144,7 +144,7 @@ namespace CDK
                 }
                 catch (Exception exception)
                 {
-                    //unhandledExecptionHandler(methodInfo.GetCurrentMethodName(), exception);
+                    unhandledExecptionHandler(methodInfo.GetCurrentMethodName(), exception);
                 }
             }
         }
