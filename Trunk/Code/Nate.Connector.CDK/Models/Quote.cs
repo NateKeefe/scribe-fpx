@@ -23,10 +23,10 @@ namespace CDK.Models.Quote
     public class Record
     {
         [PropertyDefinition]
-        public DateTime OrderStatusUpdated__c { get; set; }
+        public DateTime? OrderStatusUpdated__c { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public DateTime LastModifiedDate { get; set; }
+        public DateTime? LastModifiedDate { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
         public string Description { get; set; }
@@ -38,7 +38,7 @@ namespace CDK.Models.Quote
         public string Name { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public int TotalCost { get; set; }
+        public int? TotalCost { get; set; }
         [PropertyDefinition]
         public string OrderId__c { get; set; }
         [PropertyDefinition]
@@ -52,22 +52,22 @@ namespace CDK.Models.Quote
         public QuoteOpportunityid OpportunityId { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public int TotalProductsCost { get; set; }
+        public int? TotalProductsCost { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public bool IsProductUpdateAllowed { get; set; }
+        public bool? IsProductUpdateAllowed { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public int ProductsAmount { get; set; }
+        public int? ProductsAmount { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public bool IsDependentDataOutOfSync { get; set; }
+        public bool? IsDependentDataOutOfSync { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public int ProductsCount { get; set; }
+        public int? ProductsCount { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public int TotalProfit { get; set; }
+        public int? TotalProfit { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
         public string LastExportedDate { get; set; }
@@ -78,7 +78,7 @@ namespace CDK.Models.Quote
         public string OrderStatus__c { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public int TotalAmount { get; set; }
+        public int? TotalAmount { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
         public string FormattedId { get; set; }
@@ -90,22 +90,22 @@ namespace CDK.Models.Quote
         public string FormattedIdSuffix { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
         public string Note { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public bool IsPrimary { get; set; }
+        public bool? IsPrimary { get; set; }
         [PropertyDefinition(UsedInQueryConstraint = true, UsedInQuerySelect = true, UsedInLookupCondition = true, UsedInActionInput = false)]
         [JsonIgnore]
         public string Id { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
-        public float TotalMargin { get; set; }
+        public float? TotalMargin { get; set; }
         [PropertyDefinition]
         [JsonIgnore]
         public QuoteLastmodifiedbyid LastModifiedById { get; set; }
