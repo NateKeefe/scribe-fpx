@@ -48,7 +48,7 @@ namespace CDK
             {
                 try
                 {
-                    var url = properties.BaseUrl + "/cpq/login?expiration=10";
+                    var url = properties.BaseUrl + "/login?expiration=10";
                     var content = "{ ";
                     content += $"\"username\":\"{properties.Username}\"";
                     content += $", \"password\":\"{properties.Password}\"";
@@ -84,23 +84,6 @@ namespace CDK
 
         public void Disconnect()
         {
-            //try
-            //{
-            //    var url = "https://dm04.fpx.com/rs/19/cpq/logout";
-            //    client.EndPoint = url;
-            //    client.Method = HttpVerb.POST;
-            //    client.ContentType = "application/json";
-            //    client.Accept = "application/json";
-            //    client.PostData = "";
-            //    var result = client.MakeRequest("");
-            //    LastConnected = null;
-            //    IsConnected = false;
-            //}
-            //catch (RESTRequestException ex)
-            //{
-            //    IsConnected = false;
-            //    Logger.Write(Logger.Severity.Info, "Failed to Disconnect", ex.Message);
-            //}
             IsConnected = false;
         }
 
@@ -172,7 +155,7 @@ namespace CDK
                     try
                     {
                         matchCriteria.TryGetValue("Id", out var quoteId);
-                        client.EndPoint = "https://dm04.fpx.com/rs/19/cpq/" + quoteId.ToString() + "?auto-product-resave=true&changes=true";
+                        client.EndPoint = properties.BaseUrl + "/" + quoteId.ToString() + "?auto-product-resave=true&changes=true";
                         client.PostData = JsonConvert.SerializeObject(data, Formatting.Indented, dtSettings);
                         var response = client.MakeRequest("");
                     }

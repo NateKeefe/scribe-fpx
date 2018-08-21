@@ -68,7 +68,6 @@ namespace CDK
                 service = null;
             }
         }
-
         internal static void unhandledExecptionHandler(string methodName, Exception exception)
         {
             var msg = string.Format("Unhandled exception caught in {0}: {1}\n\n", methodName, exception.Message);
@@ -76,11 +75,7 @@ namespace CDK
             Logger.Write(Logger.Severity.Error, ConnectorTypeDescription, msg + details);
             throw new ApplicationException(msg, exception);
         }
-        #endregion
-
-        #region IConnector
         public Guid ConnectorTypeId => Guid.Parse(ConnectorTypeIdAsString);
-
         public bool IsConnected
         {
             get
@@ -89,6 +84,9 @@ namespace CDK
                 return service.IsConnected;
             }
         }
+        #endregion
+
+        #region IConnector
 
         public string PreConnect(IDictionary<string, string> properties)
         {
